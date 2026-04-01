@@ -1,13 +1,25 @@
 package com.example.ex2;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.util.Scanner;
 
-@SpringBootApplication
-public class Ex2Application {
+public class LoginSystem {
+    public static void main(String[] args) {
+    
+        String Username = "Admin";
+        String Password = "Password123";
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Username: ");
+        String user = input.nextLine();
 
-	public static void main(String[] args) {
-		SpringApplication.run(Ex2Application.class, args);
-	}
+        System.out.print("Enter Password: ");
+        String pass = input.nextLine();
 
+        if (user.equals(Username) && pass.equals(Password)) {
+            System.out.println("Login Successful! Welcome.");
+        } else {
+            System.out.println("Invalid credentials. Access Denied.");
+        }
+        
+        input.close();
+    }
 }
